@@ -1,0 +1,68 @@
+{
+    "seed": 123,
+    "data_version": "filtered",
+    "split_mode": "temporal_70_15_15",
+    "filename_split_patterns": {
+        "test": [
+            "S2_test"
+        ],
+        "train": [
+            "S1_"
+        ],
+        "valid": [
+            "S2_"
+        ]
+    },
+    "split_ratios": {
+        "train": 0.7,
+        "valid": 0.15,
+        "test": 0.15
+    },
+    "dataset_path": "/Volumes/riscv-build/Syntzulu_connection/DATASET_FILTRATO",
+    "class_names": [
+        "rest",
+        "sasso",
+        "forbici",
+        "carta"
+    ],
+    "augmentation": {
+        "enabled": false,
+        "copies": 1,
+        "global_gain_range": [
+            0.9,
+            1.1
+        ],
+        "channel_gain_range": [
+            0.9,
+            1.1
+        ],
+        "noise_std_fraction_range": [
+            0.0,
+            0.0
+        ],
+        "crosstalk_range": [
+            0.0,
+            0.0
+        ],
+        "temporal_shift": false,
+        "output_dtype": "int32"
+    },
+    "encoding_mode": "standard",
+    "delta": 200.0,
+    "lambda_d": 0.0001,
+    "window_size": 300,
+    "window_shift": 25,
+    "min_label_ratio": 0.9,
+    "batch_size": 16,
+    "epochs": 100,
+    "patience": 10,
+    "best_epoch": 23,
+    "best_valid_loss": 0.03736767342692255,
+    "loss_type": "spike_rate",
+    "true_rate": 0.15,
+    "false_rate": 0.03,
+    "class_weights": null,
+    "num_classes": 4,
+    "input_features": 48,
+    "network": "Dense 64-128-4"
+}

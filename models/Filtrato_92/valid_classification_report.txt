@@ -1,0 +1,10 @@
+              precision    recall  f1-score   support
+
+        rest     0.8655    0.9836    0.9208      1642
+       sasso     0.9890    0.8583    0.9190       628
+     forbici     0.9722    0.8264    0.8934       507
+       carta     0.9689    0.8540    0.9079       548
+
+    accuracy                         0.9146      3325
+   macro avg     0.9489    0.8806    0.9103      3325
+weighted avg     0.9221    0.9146    0.9141      3325

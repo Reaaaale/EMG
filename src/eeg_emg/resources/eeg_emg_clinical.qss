@@ -1,0 +1,139 @@
+/* ============================================================
+   EEG · EMG — tema "Clinico" (light)
+   Foglio di stile Qt. Nessuna modifica alla logica dell'app.
+   Applicalo con:  app.setStyleSheet(open("eeg_emg_clinical.qss").read())
+   ============================================================ */
+
+/* --- base / finestra --- */
+QMainWindow, QWidget {
+    background: #f5f7fa;
+    color: #152036;
+    /* font di sistema: nessuna dipendenza da installare (come nell'anteprima 2A) */
+    font-family: "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+    font-size: 13px;
+}
+
+/* --- tab a pillola (QTabBar) --- */
+QTabWidget::pane {
+    border: none;
+    top: 6px;
+}
+QTabBar::tab {
+    background: transparent;
+    color: #64748b;
+    padding: 8px 18px;
+    margin-right: 6px;
+    border-radius: 999px;
+    font-weight: 500;
+}
+QTabBar::tab:selected {
+    background: #3b82f6;
+    color: #ffffff;
+    font-weight: 600;
+}
+QTabBar::tab:hover:!selected {
+    color: #152036;
+}
+
+/* --- card (QGroupBox) --- */
+QGroupBox {
+    background: #ffffff;
+    border: 1px solid #e5eaf1;
+    border-radius: 16px;
+    margin-top: 16px;
+    padding: 14px 14px 12px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 16px;
+    top: 3px;
+    padding: 0 4px;
+    letter-spacing: 1px;
+}
+
+/* --- pulsanti --- */
+QPushButton {
+    background: #f4f7fb;
+    color: #152036;
+    border: 1px solid #e5eaf1;
+    border-radius: 9px;
+    padding: 9px 14px;
+    font-weight: 500;
+}
+QPushButton:hover   { border-color: #3b82f6; }
+QPushButton:pressed { background: #eef2f8; }
+
+/* pulsanti primari: nel Python fai  btn.setProperty("accent", True)  */
+QPushButton[accent="true"] {
+    background: #3b82f6;
+    color: #ffffff;
+    border: none;
+}
+QPushButton[accent="true"]:hover   { background: #2f74e0; }
+QPushButton[accent="true"]:pressed { background: #2a68cc; }
+
+/* --- input, combo, spin --- */
+QComboBox, QLineEdit, QSpinBox, QDoubleSpinBox {
+    background: #f4f7fb;
+    color: #152036;
+    border: 1px solid #e5eaf1;
+    border-radius: 8px;
+    padding: 6px 10px;
+    selection-background-color: #3b82f6;
+    selection-color: #ffffff;
+}
+QComboBox:focus, QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus {
+    border-color: #3b82f6;
+}
+QComboBox::drop-down { border: none; width: 18px; }
+QLineEdit[readOnly="true"] {
+    background: #f9fbfd;
+    color: #2563eb;
+    font-family: "Consolas", "DejaVu Sans Mono", monospace;
+}
+
+/* --- checkbox --- */
+QCheckBox { color: #152036; spacing: 9px; }
+QCheckBox::indicator {
+    width: 18px; height: 18px;
+    border-radius: 5px;
+    border: 1px solid #d7dee8;
+    background: #ffffff;
+}
+QCheckBox::indicator:checked {
+    background: #3b82f6;
+    border-color: #3b82f6;
+}
+
+/* --- lista porte COM --- */
+QListWidget {
+    background: #f4f7fb;
+    border: 1px solid #e5eaf1;
+    border-radius: 10px;
+    padding: 4px;
+    font-family: "Consolas", "DejaVu Sans Mono", monospace;
+    font-size: 12px;
+}
+QListWidget::item { padding: 7px 10px; border-radius: 7px; }
+QListWidget::item:selected { background: rgba(59,130,246,0.12); color: #152036; }
+
+/* --- log seriale --- */
+QPlainTextEdit {
+    background: #0d1626;
+    color: #5b9dff;
+    border: 1px solid #e5eaf1;
+    border-radius: 12px;
+    padding: 10px;
+    font-family: "Consolas", "DejaVu Sans Mono", monospace;
+    font-size: 12px;
+}
+
+/* --- status bar & scrollbar --- */
+QStatusBar { color: #64748b; font-family: "Consolas", "DejaVu Sans Mono", monospace; font-size: 11px; }
+QScrollBar:vertical   { background: transparent; width: 10px; margin: 2px; }
+QScrollBar::handle:vertical { background: #cfd8e4; border-radius: 5px; min-height: 24px; }
+QScrollBar::add-line, QScrollBar::sub-line { height: 0; }
