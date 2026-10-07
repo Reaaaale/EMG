@@ -16,7 +16,6 @@
 macOS/Linux:
 
 ```bash
-cd /percorso/scelto/pipeline_emg
 python3.10 -m venv venv
 source venv/bin/activate
 python -m pip install --upgrade pip
