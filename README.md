@@ -7,11 +7,9 @@
 - `src/eeg_emg`: applicazione desktop per registrazione, replay e inferenza.
 - `models`: destinazione consigliata per modello e configurazione.
 - `results`: output generati dal notebook.
-- `docs`: istruzioni dettagliate e documentazione tecnica.
 
-I modelli non sono inclusi. Per l'inferenza copiare nella stessa sottocartella
-di `models/` il checkpoint (`model_state_dict.pt` oppure `model_best.pt`) e il
-relativo `config.json` prodotto dal notebook.
+
+
 
 ## Installazione
 
