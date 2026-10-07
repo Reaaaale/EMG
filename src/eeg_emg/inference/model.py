@@ -76,7 +76,7 @@ try:
     import torch
 
     _BaseNetwork = torch.nn.Module
-except Exception:  # pragma: no cover - torch is optional until a model is loaded
+except Exception:  
     _BaseNetwork = object
 
 

@@ -19,10 +19,7 @@ def expand_window_with_derivatives(window: np.ndarray, max_derivative_order: int
         count = time_steps - n * 4
         if count <= 0:
             continue
-        # The scalar reference implementation promotes operations with Python
-        # integer coefficients to float64 before storing each float32 result.
-        # Preserve that rounding behavior while evaluating all channels/times
-        # in one NumPy operation.
+       
         previous = expanded[:, prev_start : prev_start + old_dim_size].astype(
             np.float64,
             copy=False,

@@ -97,7 +97,7 @@ class LiveInferencePipeline:
         self.class_names = class_names or {0: "rest", 1: "sasso", 2: "forbici", 3: "carta"}
         self.device = device
 
-        # Ring buffer containing the last `window_size` samples.
+        
         self.buffer = RingBuffer(self.window_size, self.n_channels)
         self._build_streaming_filter()
         self.sample_index = 0
@@ -114,9 +114,7 @@ class LiveInferencePipeline:
         path = Path(model_path)
         config = read_training_config(path)
 
-        # Prefer the training config placed next to the model checkpoint. This
-        # keeps live inference aligned with the training window, shift, delta,
-        # and derivative settings.
+        
         self.window_size = int(config.get("window_size", self.window_size))
         self.window_shift = max(
             int(config.get("window_shift", self.window_shift)),
